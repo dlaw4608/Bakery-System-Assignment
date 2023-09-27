@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bakerysystem.Controllers.MasterController">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <TabPane prefHeight="400.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="Baked Goods">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Button layoutX="125.0" layoutY="236.0" mnemonicParsing="false" onAction="#addBakedGoods" text="Add Baked Good" />
+                                        <Text layoutX="230.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Baked Goods">
+                                            <font>
+                                                <Font name="System Italic" size="32.0" />
+                                            </font>
+                                        </Text>
+                                        <ListView fx:id="bakedGoodsListView" layoutX="367.0" layoutY="84.0" prefHeight="200.0" prefWidth="245.0" />
+                                        <TextField fx:id="nameId" layoutX="100.0" layoutY="84.0" />
+                                        <TextField fx:id="origin" layoutX="100.0" layoutY="139.0" />
+                                        <TextField fx:id="textDescription" layoutX="100.0" layoutY="196.0" />
+                                        <Text layoutX="40.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NAME" />
+                                        <Text layoutX="37.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ORIGIN" />
+                                        <Text layoutX="14.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DESCRIPTION" />
+                                        <Button fx:id="deleteBakedGood" layoutX="153.0" layoutY="310.0" mnemonicParsing="false" text="Delete" />
+                                        <Button fx:id="updateBakedGood" layoutX="153.0" layoutY="272.0" mnemonicParsing="false"  text="Update" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Ingredients">
+                            <content>
+                                <AnchorPane>
+                                    <children>
+                                        <Text layoutX="230.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ingredients">
+                                            <font>
+                                                <Font name="System Italic" size="32.0" />
+                                            </font>
+                                        </Text>
+                                        <ListView fx:id="ingredientsListView" layoutX="367.0" layoutY="84.0" prefHeight="200.0" prefWidth="245.0" />
+                                        <TextField fx:id="IngredientName" layoutX="100.0" layoutY="84.0" />
+                                        <TextField fx:id="IngredientDescription" layoutX="100.0" layoutY="139.0" />
+                                        <TextField fx:id="Calories" layoutX="100.0" layoutY="196.0" />
+                                        <Text layoutX="40.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NAME" />
+                                        <Text layoutX="15.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DESCRIPTION" />
+                                        <Text layoutX="26.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CALORIES" />
+                                        <Button layoutX="126.0" layoutY="232.0" mnemonicParsing="false" onAction="#addIngredients" text="Add Ingredients" />
+                                        <ComboBox fx:id="bakedGoodCmBoBx" layoutX="105.0" layoutY="319.0" prefWidth="150.0" promptText="List Baked Goods" />
+                              <Button layoutX="147.0" layoutY="277.0" mnemonicParsing="false" text="Remove" />
+                                    </children>
+
+
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Recipes">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView fx:id="recipeListView" layoutX="372.0" layoutY="103.0" prefHeight="200.0" prefWidth="200.0" />
+                              <TextField layoutX="255.0" layoutY="162.0" prefHeight="26.0" prefWidth="51.0" />
+                              <Text layoutX="274.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recipe">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="259.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount" />
+                              <Button layoutX="111.0" layoutY="225.0" mnemonicParsing="false" text="Add Recipe" />
+                              <ComboBox fx:id="recipeBakedGoodCB" layoutX="76.0" layoutY="103.0" prefWidth="150.0" promptText="Baked Goods" />
+                              <ComboBox fx:id="recipeIngredientsCB" layoutX="76.0" layoutY="162.0" prefWidth="150.0" promptText="Ingredients" />
+                              <Button layoutX="120.0" layoutY="283.0" mnemonicParsing="false" text="Remove" />
+                           </children></AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab text="Search">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ListView layoutX="372.0" layoutY="103.0" prefHeight="200.0" prefWidth="200.0" />
+                              <Text layoutX="269.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search ">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Text>
+                              <TextField layoutX="44.0" layoutY="103.0" />
+                              <Button layoutX="204.0" layoutY="104.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="89.0" text="Search" />
+                           </children></AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
